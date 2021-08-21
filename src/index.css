@@ -12,7 +12,7 @@ code {
     monospace;
 }
 
-/* here the problem is the {position: relative} */
+/* here the problem is the {position: relative} our modal is in "relative" jail into the blue .App we will use react portal */
 .App {
   position: relative;
   height: 400px;

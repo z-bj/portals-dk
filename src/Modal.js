@@ -1,11 +1,11 @@
 import React, { Component } from "react";
+import ReactDOM from "react-dom";
 
 class Modal extends Component {
   render() {
-    return (
+    return ReactDOM.createPortal(
       <div className="modal" onClick={this.props.close}>
-        {" "}
-        {/*we put the onClick here because we want to use the bubling propagation, to enable closing modal window by clicking any where on the page because the button will searching the onclick by bubling from parent to parent div to div*/}
+        {/*we put the onClick here because we want to use the bubling propagation, to enable closing modal window by clicking any where on the page because the button will searching the onclick by bubling from parent to parent, div to div*/}
         <div>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi
@@ -15,7 +15,8 @@ class Modal extends Component {
           </p>
           <button>close</button>
         </div>
-      </div>
+      </div>,
+      document.getElementById("second-root")
     );
   }
 }
