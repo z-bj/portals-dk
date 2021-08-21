@@ -17,8 +17,12 @@ class App extends Component {
     });
   };
 
+  handleHide = () => {
+    this.setState({ showModal: false });
+  };
+
   render() {
-    const modal = this.state.showModal && <Modal />;
+    const modal = this.state.showModal && <Modal close={this.handleHide} />; // here  modal close props
     return (
       <div className="App">
         <button onClick={this.handleShow}>Display Modal</button>
